@@ -6,15 +6,183 @@
     <title>Tailwind Project</title>
     <link href="./dist/styles.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <header class="p-4 bg-blue-600 text-white text-center">
-        <h1 class="text-2xl">Welcome to Tailwind Project</h1>
+<body class="font-sans">
+
+    <!-- Header -->
+    <header class="w-full bg-blue-primary text-white">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+        
+        <div class="flex items-center space-x-8">
+          <div class="flex-shrink-0">
+            <img src="./assets/criatura.png" alt="Logo" class="h-10 w-auto">
+          </div>
+          
+          <nav class="hidden md:flex space-x-4">
+            <a href="#" class="hover:text-gray-200">Serviços</a>
+            <a href="#" class="hover:text-gray-200">Mapa</a>
+            <a href="#" class="hover:text-gray-200">Agenda</a>
+            <a href="#" class="hover:text-gray-200">Wikipetia</a>
+            <a href="#" class="hover:text-gray-200">Contato</a>
+          </nav>
+        </div>
+        
+        <div>
+          <a href="#" class="border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-primary transition">Login</a>
+        </div>
+      </div>
     </header>
-    <main class="p-6">
-        <button id="alertBtn" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-            Click Me
-        </button>
+    
+    <!-- Body -->
+    <main class="bg-beige-primary min-h-screen">
+
+        <!-- Carrossel -->
+        <section class="relative w-full h-96 overflow-hidden">
+            <div id="carousel" class="relative w-full h-full overflow-hidden">
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out translate-x-0">
+                    <img src="./assets/img1.jpg" alt="Carousel Image 1" class="w-full h-full object-cover"/>
+                </div>
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out translate-x-full">
+                    <img src="./assets/img2.jpg" alt="Carousel Image 2" class="w-full h-full object-cover"/>
+                </div>
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out translate-x-full">
+                    <img src="./assets/img3.jpg" alt="Carousel Image 3" class="w-full h-full object-cover"/>
+                </div>
+
+                <div class="absolute inset-0 bg-gray-900 bg-opacity-30 pointer-events-none"></div>
+            </div>
+        
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <a href="#" class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition">
+                    Create an account
+                </a>
+            </div>
+        
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button id="prevBtn" class="bg-white text-blue-primary px-3 py-2 rounded hover:bg-gray-100">
+                </button>
+                <button id="nextBtn" class="bg-white text-blue-primary px-3 py-2 rounded hover:bg-gray-100">
+                </button>
+            </div>
+        </section>
+      
+        <!-- Mapa -->
+        <section class="max-w-7xl mx-auto px-4 py-16">
+            <h2 class="text-xl font-semibold mb-4">Veja os serviços próximos:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+                <img src="path/to/img4.jpg" alt="Mapa" class="w-full h-auto object-cover">
+            </div>
+            <div>
+                <ul class="space-y-2">
+                <li class="border-b py-2">Serviço 1</li>
+                <li class="border-b py-2">Serviço 2</li>
+                <li class="border-b py-2">Serviço 3</li>
+                <li class="border-b py-2">Serviço 4</li>
+                </ul>
+            </div>
+            </div>
+        </section>
+      
+        <!-- Calendário -->
+        <section class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Organize seu pet</h2>
+                <p class="mb-4">Tenha uma visão clara dos seus compromissos e agendamentos.</p>
+            </div>
+            <div>
+                <img src="path/to/calendar.jpg" alt="Calendário" class="w-full h-auto object-cover">
+            </div>
+            </div>
+        </section>
+      
     </main>
-    <script src="./src/script.js"></script>
-</body>
+  </body>
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+    let intervalId = null;
+    const intervalTime = 5000;
+
+    // Ensure all non-active slides start off to the right
+    slides.forEach((slide, i) => {
+    if (i !== currentIndex) {
+        slide.classList.add('translate-x-full');
+    }
+    });
+
+    function showSlide(newIndex) {
+    const currentSlide = slides[currentIndex];
+    const newSlide = slides[newIndex];
+
+    if (newIndex > currentIndex) {
+        // Moving forward
+        // Make sure the new slide is to the right
+        newSlide.classList.remove('-translate-x-full');
+        newSlide.classList.add('translate-x-full');
+
+        // Force reflow to ensure the browser applies the initial position
+        newSlide.getBoundingClientRect();
+
+        // Move current slide to the left and new slide to the center
+        currentSlide.classList.remove('translate-x-0');
+        currentSlide.classList.add('-translate-x-full');
+        newSlide.classList.remove('translate-x-full');
+        newSlide.classList.add('translate-x-0');
+    } else {
+        // Moving backward
+        // Make sure the new slide is to the left
+        newSlide.classList.remove('translate-x-full');
+        newSlide.classList.add('-translate-x-full');
+
+        // Force reflow
+        newSlide.getBoundingClientRect();
+
+        // Move current slide to the right and new slide to the center
+        currentSlide.classList.remove('translate-x-0');
+        currentSlide.classList.add('translate-x-full');
+        newSlide.classList.remove('-translate-x-full');
+        newSlide.classList.add('translate-x-0');
+    }
+
+    currentIndex = newIndex;
+    }
+
+    function nextSlide() {
+    const newIndex = (currentIndex + 1) % slides.length;
+    showSlide(newIndex);
+    }
+
+    function prevSlide() {
+    const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(newIndex);
+    }
+
+    function startAutoSlide() {
+    intervalId = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopAutoSlide() {
+    clearInterval(intervalId);
+    intervalId = null;
+    }
+
+    nextBtn.addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    startAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    startAutoSlide();
+    });
+
+    // Initialize carousel
+    startAutoSlide();
+  </script>  
 </html>

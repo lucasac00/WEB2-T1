@@ -53,7 +53,7 @@
         
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <a href="#" class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition">
-                    Create an account
+                    Crie uma conta
                 </a>
             </div>
         
@@ -107,7 +107,6 @@
     let intervalId = null;
     const intervalTime = 5000;
 
-    // Ensure all non-active slides start off to the right
     slides.forEach((slide, i) => {
     if (i !== currentIndex) {
         slide.classList.add('translate-x-full');
@@ -119,29 +118,17 @@
     const newSlide = slides[newIndex];
 
     if (newIndex > currentIndex) {
-        // Moving forward
-        // Make sure the new slide is to the right
         newSlide.classList.remove('-translate-x-full');
         newSlide.classList.add('translate-x-full');
-
-        // Force reflow to ensure the browser applies the initial position
         newSlide.getBoundingClientRect();
-
-        // Move current slide to the left and new slide to the center
         currentSlide.classList.remove('translate-x-0');
         currentSlide.classList.add('-translate-x-full');
         newSlide.classList.remove('translate-x-full');
         newSlide.classList.add('translate-x-0');
     } else {
-        // Moving backward
-        // Make sure the new slide is to the left
         newSlide.classList.remove('translate-x-full');
         newSlide.classList.add('-translate-x-full');
-
-        // Force reflow
         newSlide.getBoundingClientRect();
-
-        // Move current slide to the right and new slide to the center
         currentSlide.classList.remove('translate-x-0');
         currentSlide.classList.add('translate-x-full');
         newSlide.classList.remove('-translate-x-full');
@@ -181,8 +168,7 @@
     stopAutoSlide();
     startAutoSlide();
     });
-
-    // Initialize carousel
+    
     startAutoSlide();
   </script>  
 </html>

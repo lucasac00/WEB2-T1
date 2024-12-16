@@ -4,7 +4,7 @@
 
     ```npm install```
 
-2. Run postcss to process the tailwind styles.css file
+2. Run postcss to process the tailwind styles.css file. If editing code, keep this running and run live-server in another tab.
 
     ```npm run build:css```
 

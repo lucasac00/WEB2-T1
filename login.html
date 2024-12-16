@@ -9,44 +9,46 @@
 </head>
 
 <body class="font-sans">
-    <section class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <section class="md:bg-orange-200 bg-beige-primary min-h-screen md:flex items-center justify-center">
 
         <!-- Container da tela de Login -->
-        <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+        <div class="md:bg-beige-primary md:flex md:rounded-2xl md:shadow-lg md:max-w-6xl md:p-5 md:items-center">
 
             <!-- Imagem do Lado na Tela Grande -->
-            <div class="w-1/2 hidden lg:block">
-                <img class=" rounded-2xl" src="./assets/img1.jpg" alt="Imagem do pet ao lado do login">
+            <div class="w-1/2 hidden lg:block h-screen">
+                <img class=" rounded-2xl w-full h-full object-cover" src="./assets/img1.jpg" alt="Imagem do pet ao lado do login">
             </div>
 
             <!-- Formulario -->
             <div class="lg:w-1/2 px-8"> <!-- REVER SE AQUI ERA sm ou lg-->
 
                 <!-- Cabecalho -->
-                <img src="assets/criatura.png" class="max-w-32 mx-auto" alt="Logo">
-                <p class="text-center">Nome Empresa pets</p>
+                <img src="assets/criatura.png" class="max-w-32 mx-auto pt-10" alt="Logo">
+                <p class="text-center font-bold text-base">Empresa Pets Organizados</p>
                 <h2 class="font-bold text-2xl mt-2">Login</h2>
                 <p class="text-sm mt-4">Se você já está cadastrado, faça o login</p>
 
                 <form action="" class="flex flex-col gap-4">
                     <!-- Email -->
                     <div class="relative mt-8">
-                        <input class="p-2 rounded-xl border w-full" type="email"
+                        <input class="bg-blue-primary p-2 pl-3 pr-10 rounded-xl border w-full placeholder-white text-white md:text-lg"
+                        type="email"
                         name="email"
                         placeholder="E-mail">
-                        <i class="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 material-icons">email</i>
+                        <i class="absolute top-1/2 right-3 -translate-y-1/2 text-white material-icons">email</i>
                     </div>
 
                     <!-- Senha -->
                     <div class="relative">
-                        <input class="p-2 rounded-xl border w-full" type="password"
+                        <input class="bg-blue-primary p-2 pl-3 pr-10 rounded-xl border w-full placeholder-white text-white md:text-lg"
+                        type="password"
                         name="password"
                         placeholder="Senha">
-                        <i class="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 material-icons">key</i>
+                        <i class="absolute top-1/2 right-3 -translate-y-1/2 text-white material-icons">key</i>
                     </div>
 
                     <!-- Entrar -->
-                    <button class="bg-blue-primary rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
+                    <button class="bg-blue-primary mt-4 rounded-xl text-white py-2 md:text-lg hover:bg-blue-700 hover:scale-105 duration-300">Entrar</button>
                 </form>
 
                 <!-- Separacao -->
@@ -56,7 +58,7 @@
 
                 <!-- Entrar com o Google -->
                 <div class="relative">
-                    <button class="bg-white border py-2 px w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300">
+                    <button class="bg-white border py-2 px w-full rounded-xl mt-5 flex justify-center items-center text-sm md:text-lg hover:bg-gray-200 hover:scale-105 duration-300">
                         Entre com o Google
                         <img src="assets/iconeGoogle.png" alt="Ícone Google" class="absolute top-1/2 left-3 -translate-y-1/2 w-6 h-6">
                     </button>
@@ -64,14 +66,14 @@
 
                 <!-- Esqueceu sua Senha -->
                 <div class="mt-10 text-sm border-b border-gray-400 py-4">
-                    <a href="#" class="hover:text-blue-700">Esqueceu sua senha?</a>
+                    <a href="#" class="hover:text-blue-700 md:text-base">Esqueceu sua senha?</a>
                 </div>
 
                 <!-- Registrar -->
-                <div class="mt-3 text-sm flex justify-between items-center">
+                <div class="mt-3 text-sm flex justify-between items-center md:text-base">
                     <p>Ainda não tem uma conta?</p>
                     <span class="ml-4"></span>
-                    <button class="py-2 px-2 bg-white border rounded-xl hover:scale-110 duration-300">Registre-se</button>
+                    <button class="py-2 px-2 bg-blue-primary text-white border rounded-xl md:text-base hover:bg-blue-700 hover:scale-110 duration-300">Registre-se</button>
                 </div>
 
             </div>
@@ -80,78 +82,5 @@
         
     </section>
 </body>
-
-
-
-
-
-
-<!-- Exemplo do Professor: -->
-
-
-<!-- <body class="font-sans w-full h-dvh min-h-dvh flex items-center justify-center bg-beige-primary md:bg-orange-200">
-    
-    <div class="w-full h-full lg:grid-cols-2 lg:grid">
-        Imagem de fundo da tela grande 
-        <div class="border-2 border-red-500 bg-[url('./assets/img1.jpg')] bg-center bg-cover lg:flex items-center justify-center hidden">
-            <div class="w-full h-full flex flex-col gap-y-8 items-center justify-center bg-slate-300/70">
-                <img src="./assets/criatura.png" alt="w-48">
-                <div class="text-xl font-bold">Be different. Be yourself</div>
-            </div>
-        </div>
-
-        Secao de Login
-        <div class="w-full h-full flex items-center justify-center">
-            <div class="w-full h-full flex flex-col items-center justify-between gap-y-3 md:w-fit md:h-fit md:p-21 md:rounded-2xl">
-
-                Logo e cabecalho
-                <div class="w-full p-4 flex flex-row justify-between items-center mb-8 md:p-o md:flex-col lg:hidden">
-                    <img src="./assets/criatura.png" class="w-24"></img>
-                    <div class="text-xl font-bold text-right"> Be different. Be yourself.</div>
-                </div>
-
-                Campos do Login
-                <div class="border-2 border-red-500 w-full flex flex-col items-center gap-y-12 p-8">
-
-
-                    Email
-                    <div class="w-full relative flex justify-end items-center md:w-80">
-                        <input placeholder="E-mail" class="w-full text-xl
-                        rounded p-2 outline-0 bg-slate-400 text-slate-800
-                        placeholder:text-slate-800 focus:bg-slate-500 md:text-base"
-                        />
-                        <i class="material-icons text-white absolute
-                        mr-2">mail</i>
-                    </div>
-
-                    Senha
-                    <div class="w-full relative flex justify-end items-center">
-                        <input type="password" placeholder="Password"
-                        class="w-full text-xl rounded p-2 outline-0 bg-slate-400
-                        text-slate-800 placeholder:text-slate-800
-                        focus:bg-slate-500 md:text-base"
-                        />
-                        <i class="material-icons text-white absolute
-                        mr-2">key</i>
-                    </div>
-                </div>
-                
-                Parte de Baixo
-                <div class="flex flex-col justify-end mb-24 md:mb-0">
-                    Esqueceu Senha
-                    <button class="select-none text-xl mt-8 rounded p-2 w-full
-                    bg-slate-600 text-white  hover:bg-blue-700
-                    active:bg-blue-500 md:text-base"> Login </button>
-
-                    Botao de Login
-                    <div class="w-full text-right text-sm select-none"><a
-                    href="#" class="hover:text-blue-700 dark:text-blue-400
-                    dark:hover:text-blue-200">Forgot your password?</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body> -->
     
 </html>

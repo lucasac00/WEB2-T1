@@ -9,11 +9,11 @@
 <body class="font-sans">
 
     <!-- Header -->
-    <header class="w-full bg-blue-primary text-white">
+    <header class=" w-full bg-blue-primary text-white ">
       <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
 
         <!-- Logo + Nav -->
-        <div class="flex items-center space-x-8">
+        <div class=" flex items-center space-x-8">
 
           <!-- Logo -->
           <div class="flex-shrink-0">
@@ -59,7 +59,7 @@
     <main class="bg-orange-200 min-h-screen">
 
         <!-- Carrossel -->
-        <section class="relative w-full h-96 overflow-hidden">
+        <section class="relative w-full h-screen-minus-header overflow-hidden p-0">
             <div id="carousel" class="relative w-full h-full overflow-hidden">
                 <div class="carousel-slide absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out translate-x-0">
                     <img src="./assets/img1.jpg" alt="Carousel Image 1" class="w-full h-full object-cover"/>
@@ -74,62 +74,64 @@
                 <div class="absolute inset-0 bg-gray-900 bg-opacity-30 pointer-events-none"></div>
             </div>
         
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <a href="login.html" class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">
-                    Crie uma conta
-                </a>
-            </div>
+            <div class="w-2/3 md:w-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <h1 class="text-white text-3xl font-bold mb-4">
+                  O cuidado que seu pet merece está aqui!
+              </h1>
+              <p class="text-gray-200 text-xl sm: text-2xl mb-6">
+                  Conectamos donos de pets com os melhores serviços e produtos para garantir o bem-estar e a felicidade dos seus melhores amigos.
+              </p>
+              <a href="login.html" class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">
+                  Crie uma conta
+              </a>
+          </div>
+          <div id="carouselIndicators" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <!-- Será populado pelo JS -->
+          </div>
         
             <!-- Indicadores do carrossel (bolinhas) -->
-            <div id="carouselIndicators" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <!-- Será populado pelo JS -->
-            </div>
         </section>
       
         <!-- Mapa -->
         <section class="flex-1 bg-beige-primary rounded-lg max-w-4xl mx-auto px-8 pt-4 pb-8 mt-16">
-            <h2 class="text-3xl font-semibold mb-6 text-center">Veja os serviços próximos:</h2>
-            <div class="flex flex-col md:flex-row md:items-start justify-center gap-8">
-                
-                <!-- Container da Imagem -->
-                <div class="flex justify-center align-center">
-                    <img src="./assets/map.png" alt="Mapa" class="w-full h-auto object-cover max-w-[480px] rounded-lg">
-                </div>
-        
-                <!-- Lista de Serviços -->
-                <div class="md:w-1/3">
-                    <ul class="space-y-2">
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">Clínica Sanavet</li>
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">Clínica SpecialeVet</li>
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">CSC Hospital Veterinário</li>
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">SamuVet 24 Horas</li>
-                    </ul>
-                </div>
+            <h2 class="text-3xl font-semibold mb-6 text-center">Veja os serviços próximos a você</h2>
+            <!-- Container da Imagem -->
+            <div class="flex flex-col sm:flex-row justify-center gap-8">
+              <div class="flex justify-center align-center w-full md:w-1/2 md:p-2">
+                  <img src="./assets/map.png" alt="Mapa" class="w-full h-full object-contain rounded-lg">
+              </div>
+                          
+              <!-- Descrição do Serviço -->
+              <div class="flex flex-col items-center ">
+                <p class="text-black text-xl sm:text-lg lg:text-xl mb-4 text-justify leading-relaxed w-80 sm:w-60">
+                    Encontre clínicas, pet shops e serviços especializados perto de você. Nosso mapa facilita a busca e conecta você aos melhores cuidados para o seu pet, onde quer que esteja.
+                </p>
+                <a href="login.html" class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">
+                    Ver mais detalhes
+                </a>
+              </div>
             </div>
         </section>
 
         <!-- Calendário -->
         <section class="flex-1 bg-beige-primary rounded-lg max-w-4xl mx-auto px-8 pt-4 pb-8 mt-16">
-            <h2 class="text-3xl font-semibold mb-6 text-center">Organize seu pet:</h2>
-            <div class="flex flex-col md:flex-row md:items-start justify-center gap-8">
-                <!-- Lista de Serviços -->
-                <div class="md:w-1/3 mt-6">
-                    <!-- <ul class="space-y-2">
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">Clínica Sanavet</li>
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">Clínica SpecialeVet</li>
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">CSC Hospital Veterinário</li>
-                        <li class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">SamuVet 24 Horas</li>
-                    </ul> -->
-                    <p class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">
-                        Com a ajuda do nosso calendário inteligente, acompanhe todas as datas mais importantes do seu pet! Vacinações recorrentes, consultas, aniversário, e muito mais em um só lugar!
-                    </p>
-                </div>
-                
-                <!-- Container da Imagem -->
-                <div class="flex justify-center align-center">
-                    <img src="./assets/calendario.png" alt="Mapa" class="w-full h-auto object-cover max-w-[480px] rounded-lg">
-                </div>
+            <h2 class="text-3xl font-semibold mb-6 text-center">Organize a agenda do seu pet</h2>
+            <!-- Container da Imagem -->
+            <div class="flex flex-col sm:flex-row justify-center gap-8">
+              <div class="flex justify-center align-center w-full md:w-1/2 md:p-2 ">
+                  <img src="./assets/calendario.png" alt="Calendario" class="w-full h-auto object-contain rounded-lg">
+              </div>
+              <!-- Descrição do Serviço -->
+              <div class="flex flex-col items-center">
+                <p class="text-black text-xl sm:text-lg lg:text-xl mb-4 text-justify leading-relaxed w-80 sm:w-60">
+                  Com a ajuda do nosso calendário inteligente, acompanhe todas as datas mais importantes do seu pet! Vacinações recorrentes, consultas, aniversário, e muito mais em um só lugar!
+                </p>
+                <a href="login.html" class="bg-blue-primary text-white px-6 py-3 rounded hover:bg-opacity-90 transition text-lg font-semibold shadow-lg">
+                  Ver mais detalhes
+                </a>
+              </div>
             </div>
+                
         </section>
     </main>
   </body>
